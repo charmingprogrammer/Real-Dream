@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <title>Payment Gateway</title>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 90vh;
+            margin: 0;
+            background-color: #f2f2f2;
+            user-select: none;
+        }
+
+
+        button {
+            background-color: #0a3762;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #053058;
+        }
+    </style>
+</head>
+
+<body>
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Simple Payment Page</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <button id="rzp-button1">Pay Entry Fee</button>
+        </div>
+        <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+        <script>
+            document.getElementById('rzp-button1').onclick = function (e) {
+                var options = {
+                    "key": "rzp_live_H70QfTYCxhAEyv", // Enter the Key ID generated from the Dashboard
+                    "amount": "100", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise or ₹500.
+                    "currency": "INR",
+                    "name": "Real Dream",
+                    "description": "Win Money with Your Cricket Knowledge!",
+                    "image": "https://your-logo-url.com/logo.png",
+                    "handler": function (response) {
+                        alert("Payment successful! Payment ID: " + response.razorpay_payment_id);
+                        // Redirect to a new page after successful payment
+                        window.location.href = "https://pub.dev/";
+                    },
+                    "theme": {
+                        "color": "#0a3762"
+                    }
+                };
+                var rzp1 = new Razorpay(options);
+                rzp1.open();
+                e.preventDefault();
+            }
+        </script>
+    </body>
+
+    </html>
+
+</body>
+
+</html>
