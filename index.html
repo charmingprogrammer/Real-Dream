@@ -44,13 +44,13 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Simple Payment Page</title>
+        <title>Real Dream Payment Page</title>
         <link rel="stylesheet" href="styles.css">
     </head>
 
     <body>
         <div class="container">
-            <button id="rzp-button1">Pay Entry Fee</button>
+            <button id="rzp-button1">Entry Fee (10Rs)</button>
         </div>
         <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
         <script>
@@ -65,7 +65,7 @@
                     "handler": function (response) {
                         alert("Payment successful! Payment ID: " + response.razorpay_payment_id);
                         // Redirect to a new page after successful payment
-                        window.location.href = "https://pub.dev/";
+                        window.location.href = "https://forms.gle/dLcGpewyKhEsDvho9";
                     },
                     "theme": {
                         "color": "#0a3762"
