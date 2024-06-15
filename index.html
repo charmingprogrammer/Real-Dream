@@ -64,7 +64,7 @@
                     "description": "Entry Fee Real Dram",
                     "image": "https://charmingprogrammer.github.io/Real-Dream/realdreamlogo.png",
                     "handler": function (response) {
-                        alert("Payment successful!");
+                        alert("Payment successful! Payment ID: " + response.razorpay_payment_id);
                         // Redirect to a new page after successful payment
                         window.location.href = "https://forms.gle/dLcGpewyKhEsDvho9";
                     },
